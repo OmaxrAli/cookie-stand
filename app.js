@@ -1,15 +1,12 @@
 
 
 
-function object(location,min ,max ,AvgCookie ) {
+'use strict'
 
-    this.location=location;
-    this.min= min;
-    this.max = max;
-    this.AvgCookie = AvgCookie;
+    let add = document.getElementById('add')
+    
+     
 
-   
-  }
 
   function getRandom(min, max) {
         min = Math.ceil(1);
@@ -20,7 +17,17 @@ function object(location,min ,max ,AvgCookie ) {
     let objectNum= prompt("How many objects do you want")
     let array=[]
     let totalSum=[]
+    let hours=["6 AM","7 AM","8 AM","9 AM","10 AM","11 AM",
+    "12 AM","1 PM","2 PM","3 PM","4 PM","5 PM","6 PM","7 PM","8 PM"]
 
+    function Stores(location,min ,max ,AvgCookie ) {
+
+    this.location=location;
+    this.min= min;
+    this.max = max;
+    this.AvgCookie = AvgCookie;
+    array.push(this)
+  }
 for (let index = 0; index < objectNum; index++) {
      
     let location= prompt("enter location");
@@ -28,27 +35,38 @@ for (let index = 0; index < objectNum; index++) {
     let max= prompt("enter the max");
     let AvgCookie= prompt("enter the avg cookie sales");
     
-    let me= new object(location, min, max, AvgCookie)
+    let me= new Stores(location, min, max, AvgCookie)
     array.push(me)
 
-    for (let index = 0; index < 12; index++) {
+    for (let index = 0; index < hours.length; index++) {
      let rand= AvgCookie*getRandom(1,21);
-    totalSum.push(rand)
-        
-    }
+    totalSum.push(rand)   
+    }}
+
+
+
     
 
-}
+
 let sum =0;
-for ( j = 0; j < array.length; j++) {
 
-    
+for (let j = 0; j < array.length-1; j++) {
+
+    let Eul = document.createElement("ul");
+    Eul.textContent= array[j].location
+    add.appendChild(Eul)
     console.log( array[j] );
 
-    for ( i= 0 ; i< totalSum.length ;i++) {
+    for (let i= 0 ; i< hours.length ;i++) {
     
-    console.log("Cookies per hour "+ totalSum[i]);
+
+    let ulE= document.createElement('ul')
+    
+
+    ulE.textContent=`${hours[i]} Cookies per hour  ${totalSum[i]}`;
     sum = sum + totalSum[i];
+
+    add.appendChild(ulE)
     }
     console.log("total is "+sum);
 }
