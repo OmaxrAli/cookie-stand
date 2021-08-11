@@ -3,6 +3,7 @@
 
 'use strict'
 
+
     let add = document.getElementById('add')
     
      
@@ -28,6 +29,39 @@
     this.AvgCookie = AvgCookie;
     array.push(this)
   }
+  
+  
+  
+    for (let index = 0; index < hours.length; index++) {
+       let thEL = document.createElement('th')
+       thEL.textContent= hours[index];
+       add.appendChild(thEL)
+      }
+
+    Stores.prototype.render= function(){
+     let tableEL = document.createElement('table')
+     add.appendChild(tableEL)
+     let tRow = document.createElement('tr')
+      
+     let thEL = document.createElement('th')
+       thEL.textContent=this.location;
+       add.appendChild(thEL)
+       let sum=0
+     for (let index = 0; index < hours.length; index++) {
+       let rand = this.AvgCookie*getRandom(1,30)
+      let thEL = document.createElement('th')
+      thEL.textContent=rand
+      add.appendChild(thEL)
+      sum = sum+ rand
+     }
+
+     let tEL = document.createElement('th')
+       tEL.textContent=sum;
+       add.appendChild(tEL)
+  }
+
+
+
 for (let index = 0; index < objectNum; index++) {
      
     let location= prompt("enter location");
@@ -38,36 +72,38 @@ for (let index = 0; index < objectNum; index++) {
     let me= new Stores(location, min, max, AvgCookie)
     array.push(me)
 
-    for (let index = 0; index < hours.length; index++) {
-     let rand= AvgCookie*getRandom(1,21);
-    totalSum.push(rand)   
-    }}
+    me.render()
+    // for (let index = 0; index < hours.length; index++) {
+    //  
+      
+    // }
+  }
 
 
+    // array[0].render;
 
+
+// let sum =0;
+
+// for (let j = 0; j < array.length; j++) {
+
+
+//     let Eul = document.createElement("ul");
+//     Eul.textContent= array[j].location
+//     add.appendChild(Eul)
     
 
-
-let sum =0;
-
-for (let j = 0; j < array.length-1; j++) {
-
-    let Eul = document.createElement("ul");
-    Eul.textContent= array[j].location
-    add.appendChild(Eul)
-    console.log( array[j] );
-
-    for (let i= 0 ; i< hours.length ;i++) {
+//     for (let i= 0 ; i< hours.length ;i++) {
     
 
-    let ulE= document.createElement('ul')
+//     let ulE= document.createElement('ul')
     
 
-    ulE.textContent=`${hours[i]} Cookies per hour  ${totalSum[i]}`;
-    sum = sum + totalSum[i];
+//     ulE.textContent=`${hours[i]} Cookies per hour  ${totalSum[i]}`;
+//     sum = sum + totalSum[i];
 
-    add.appendChild(ulE)
-    }
-    console.log("total is "+sum);
-}
+//     add.appendChild(ulE)
+//     }
+//     console.log("total is "+sum);
+// }
 
