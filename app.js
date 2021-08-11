@@ -31,7 +31,10 @@
   }
   
   
-  
+
+    let thEL = document.createElement('th')
+    thEL.textContent= 'Hours';
+    add.appendChild(thEL)
     for (let index = 0; index < hours.length; index++) {
        let thEL = document.createElement('th')
        thEL.textContent= hours[index];
@@ -42,7 +45,7 @@
      let tableEL = document.createElement('table')
      add.appendChild(tableEL)
      let tRow = document.createElement('tr')
-      
+      add.appendChild(tRow)
      let thEL = document.createElement('th')
        thEL.textContent=this.location;
        add.appendChild(thEL)
@@ -56,7 +59,7 @@
      }
 
      let tEL = document.createElement('th')
-       tEL.textContent=sum;
+       tEL.textContent='Total '+ sum;
        add.appendChild(tEL)
   }
 
@@ -73,10 +76,7 @@ for (let index = 0; index < objectNum; index++) {
     array.push(me)
 
     me.render()
-    // for (let index = 0; index < hours.length; index++) {
-    //  
-      
-    // }
+    
   }
 
 

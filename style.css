@@ -1,4 +1,9 @@
 td, th, table{
 
+    
+    
     border: 1px solid black;
+    max-inline-size: 5cm;
+    width: 5cm;
+    
 }
