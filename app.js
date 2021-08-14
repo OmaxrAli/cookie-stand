@@ -15,95 +15,86 @@
         return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
     }
 
-    let objectNum= prompt("How many objects do you want")
     let array=[]
     let totalSum=[]
     let hours=["6 AM","7 AM","8 AM","9 AM","10 AM","11 AM",
     "12 AM","1 PM","2 PM","3 PM","4 PM","5 PM","6 PM","7 PM","8 PM"]
 
-    function Stores(location,min ,max ,AvgCookie ) {
+    function Stores(Location,min ,max ,AvgCookie ) {
 
-    this.location=location;
+    this.location= Location;
     this.min= min;
     this.max = max;
     this.AvgCookie = AvgCookie;
-    array.push(this)
+   
+    
   }
-  
-  
-  
+
+  let Seattle=new Stores("Seattle",23,65,6.3);
+  let Tokyo=new Stores("Tokyo" ,3,24,1.2);
+  let Dubai=new Stores('Dubai',11,38,3.7);
+  let Paris	=new Stores('Paris',20,38,2.3);
+  let Lima	=new Stores('Lima',2,16,4.6);
+
+  array=[Seattle,Tokyo,Dubai,Paris,Lima]
+
+
+    let tableEL = document.createElement('table')
+     add.appendChild(tableEL)
+    let thEL = document.createElement('th')
+
+    thEL.textContent= 'Hours';
+    tableEL.appendChild(thEL)
+
     for (let index = 0; index < hours.length; index++) {
        let thEL = document.createElement('th')
        thEL.textContent= hours[index];
-       add.appendChild(thEL)
+       tableEL.appendChild(thEL)
       }
-
-    Stores.prototype.render= function(){
-     let tableEL = document.createElement('table')
-     add.appendChild(tableEL)
-     let tRow = document.createElement('tr')
+      let thEL0 = document.createElement('th')
+      thEL0.textContent= "Total";
+      tableEL.appendChild(thEL0)
       
-     let thEL = document.createElement('th')
-       thEL.textContent=this.location;
-       add.appendChild(thEL)
-       let sum=0
-     for (let index = 0; index < hours.length; index++) {
-       let rand = this.AvgCookie*getRandom(1,30)
-      let thEL = document.createElement('th')
-      thEL.textContent=rand
-      add.appendChild(thEL)
-      sum = sum+ rand
+  
+
+      Stores.prototype.render = function(){
+        let tRow = document.createElement('tr')
+         
+         tableEL.appendChild(tRow)
+         let thEL2 = document.createElement('th')
+         thEL2.textContent=this.location;
+         tRow.appendChild(thEL2)
+
+         let sum =0
+         for (let index = 0; index < hours.length; index++) {
+          let rand = this.AvgCookie*getRandom(1,21);
+          sum = sum+ rand;
+          rand = rand.toFixed(0);
+         let thEL = document.createElement('th')
+         thEL.textContent=rand
+
+         tRow.appendChild(thEL)
+        }
+
+    let tEL = document.createElement('th')
+    
+       tEL.textContent= sum.toFixed(0);
+       tRow.appendChild(tEL)
+
+      }
+      
+    for (let index = 0; index < array.length; index++) {
+        array[index].render();
+    
      }
-
-     let tEL = document.createElement('th')
-       tEL.textContent=sum;
-       add.appendChild(tEL)
-  }
-
-
-
-for (let index = 0; index < objectNum; index++) {
      
-    let location= prompt("enter location");
-    let min= prompt("enter the min");
-    let max= prompt("enter the max");
-    let AvgCookie= prompt("enter the avg cookie sales");
+        
+ 
     
-    let me= new Stores(location, min, max, AvgCookie)
-    array.push(me)
-
-    me.render()
-    // for (let index = 0; index < hours.length; index++) {
-    //  
+     
+        
+        
       
-    // }
-  }
-
-
-    // array[0].render;
-
-
-// let sum =0;
-
-// for (let j = 0; j < array.length; j++) {
-
-
-//     let Eul = document.createElement("ul");
-//     Eul.textContent= array[j].location
-//     add.appendChild(Eul)
-    
-
-//     for (let i= 0 ; i< hours.length ;i++) {
-    
-
-//     let ulE= document.createElement('ul')
-    
-
-//     ulE.textContent=`${hours[i]} Cookies per hour  ${totalSum[i]}`;
-//     sum = sum + totalSum[i];
-
-//     add.appendChild(ulE)
-//     }
-//     console.log("total is "+sum);
-// }
+     
+  
 
