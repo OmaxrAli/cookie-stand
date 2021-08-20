@@ -35,7 +35,40 @@ let Paris	=new Stores('Paris',20,38,2.3);
 let Lima	=new Stores('Lima',2,16,4.6);
 
 array=[Seattle,Tokyo,Dubai,Paris,Lima]
+Stores.prototype.render = function(){
 
+    let tRow = document.createElement('tr')
+     tableEL.appendChild(tRow)
+
+     let thEL2 = document.createElement('th')
+     thEL2.textContent=this.location;
+     tRow.appendChild(thEL2)
+
+
+     this.calcAvgCookperHour();
+     for (let index = 0; index < hours.length; index++) { 
+     let thEL = document.createElement('th')
+     thEL.textContent=this.AvaCookperHour[index];
+     tRow.appendChild(thEL)
+    }
+    
+    this.total
+  }
+let myForm= document.getElementById('myForm')
+
+myForm.addEventListener('submit',addStores)
+
+function addStores(event){
+  event.preventDefault();
+  let formLoc = event.target.STN.value;
+  let Minform= event.target.Minimum.value;
+  let Maxform= event.target.Maximum.value;
+  let ACform= event.target.AC.value;
+
+  let FormEl= new Stores(formLoc,Minform,Maxform,ACform);
+  array.push(FormEl);
+  array[1].render
+}
 Stores.prototype.render2 = function(){
 
   let olEl=document.createElement('ul')
@@ -62,25 +95,7 @@ Stores.prototype.calcAvgCookperHour= function(){
 }
 let tableEL=document.createElement('table');
   add.appendChild(tableEL);
-Stores.prototype.render = function(){
 
-    let tRow = document.createElement('tr')
-     tableEL.appendChild(tRow)
-
-     let thEL2 = document.createElement('th')
-     thEL2.textContent=this.location;
-     tRow.appendChild(thEL2)
-
-
-     this.calcAvgCookperHour();
-     for (let index = 0; index < hours.length; index++) { 
-     let thEL = document.createElement('th')
-     thEL.textContent=this.AvaCookperHour[index];
-     tRow.appendChild(thEL)
-    }
-    
-    this.total
-  }
 
 
 let clicked3=false;
@@ -185,6 +200,7 @@ function contact(){
 }
 
 
+// ------------------------- form
 
 
 
