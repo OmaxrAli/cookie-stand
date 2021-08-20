@@ -1,9 +1,109 @@
-td, th, table,tr{
 
-    
-    
+body{
+    width: 787px;
+
+}
+
+td, th, table,tr{    
     border: 1px solid black;
     max-inline-size: 5cm;
-
+}
+h1{
+    display: inline;
+    background-color: rgb(178, 216, 216);
+    border: solid;
+    padding: 2%;
     
 }
+#headerlink{
+    margin: 5%;
+}
+#logoim{
+
+    width: 23%;
+    margin: 20px 10px;
+    border: solid;
+    float: left;
+}
+
+#hbutton button{
+    padding: 10px 70px;
+    float: right;
+    
+    font-size: 20px;
+}
+header{
+
+    background-color: darkgray;
+
+    width: 100%;
+    
+    border: black solid;
+}
+
+/* ----------------------------- main */
+main{
+
+    width: 100%;
+    border: solid;
+    height: 1500px;
+}
+.buttons {
+    padding: 4%;
+    margin: 7%;
+}
+section div{
+    display: inline-block;
+}
+#Aat {
+    
+    width: 200px;
+    height:350px;
+    margin-left: 25px;
+    border: black solid;
+}
+#Aon{
+    height:350px;
+    width: 200px;
+    border: black solid;
+    margin-left: 25px;
+
+}
+#info{
+    width: 200px;
+    height:350px;
+    margin-left: 25px;
+    border: black solid;
+
+}
+
+
+
+
+/* -------------------footer */
+footer{
+    width: 100%;
+    height: 100px;
+    border: black solid;
+    background-color: gray;
+}
+ /* --------------------  Home*/
+ #one{
+     padding: 2%;
+     margin-left: 60px;
+     color: black;
+ }
+ #two{
+     padding: 2%;
+     padding-left: 20px;
+     margin-left: 10px;
+
+     color: black;
+ }
+ 
+ #homeimg img{
+     width: 40%;
+     margin: 3%;
+     display: inline;
+     
+ }
