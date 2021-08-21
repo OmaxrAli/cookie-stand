@@ -13,7 +13,8 @@ h1{
     background-color: rgb(178, 216, 216);
     border: solid;
     padding: 2%;
-    
+    font-family: 'Allison', cursive;
+    color:red;
 }
 #headerlink{
     margin: 5%;
@@ -29,7 +30,7 @@ h1{
 #hbutton button{
     padding: 10px 70px;
     float: right;
-    
+    color: mediumaquamarine;
     font-size: 20px;
 }
 header{

@@ -14,6 +14,8 @@ h1{
     background-color: rgb(178, 216, 216);
     border: solid;
     padding: 2%;
+    font-family: 'Allison', cursive;
+    color:rgb(184, 49, 49);
     
 }
 #headerlink{
@@ -29,6 +31,7 @@ h1{
 }
 #headerlink{
     margin: 5%;
+    color: lightseagreen;
 }
 #logoim{
 
@@ -41,7 +44,7 @@ h1{
 #hbutton button{
     padding: 8px 50px;
     float: right;
-    
+    color: mediumaquamarine;
     font-size: 20px;
 }
 header{
@@ -64,6 +67,8 @@ td, th, table,tr{
     max-inline-size: 5cm;
     margin: 0px 150px;
     background-color: wheat;
+    font-family: 'Allison', cursive;
+    font-family: 'Playfair Display', serif;
 }
 
 main{
